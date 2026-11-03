@@ -16,7 +16,7 @@ CIS 5450 final project (Fall 2026). Group: Ziyue Xu, Yuzhi Zheng, Lin Ge, Yiwen 
 ## Data
 
 Data files are **not** stored in git. `01_data_pipeline.ipynb` downloads the raw files to Google Drive
-(`MyDrive/CIS5450_project/data/raw/`) and writes the analysis table to `data/clean/trips_clean_v1.parquet`.
+(`MyDrive/CIS5450_project/data/raw/`) and writes the analysis table to `data/clean/trips_clean_v1.parquet`, plus a full CSV copy (`trips_clean_v1.csv`) and a 10,000-row preview CSV for opening in Excel or Sheets. Use the Parquet file in code, since CSV loses column types.
 Teammates can read that file from a shared Drive folder. Column meanings and the list of columns that must not be used as features are in [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
 Sources: [NYC TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) (yellow taxi, April to June 2026, plus the Taxi Zone Lookup Table) and the [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api).
