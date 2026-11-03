@@ -1,0 +1,8 @@
+# Data lives on Google Drive, never in git
+data/
+*.parquet
+*.csv
+!docs/*.csv
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
