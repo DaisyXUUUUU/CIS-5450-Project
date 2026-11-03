@@ -12,7 +12,7 @@ One row per sampled credit-card yellow taxi trip after cleaning. Produced by `no
 | `high_tip`, `high_tip_20`, `high_tip_30` | Target labels. |
 | `payment_type` | Always 1 (card) after filtering. |
 | `tpep_dropoff_datetime` | Only used to compute `duration_min`. |
-| `split`, `source_month` | Bookkeeping. |
+| `split`, `source_month`, `pickup_hour_ts` | Bookkeeping. |
 
 ## Columns
 
@@ -39,10 +39,20 @@ One row per sampled credit-card yellow taxi trip after cleaning. Produced by `no
 | `PU_Borough`, `DO_Borough` | str | Borough from the zone lookup. |
 | `PU_Zone`, `DO_Zone` | str | Zone name from the zone lookup. |
 | `PU_service_zone`, `DO_service_zone` | str | Yellow Zone, Boro Zone, Airports, or EWR. |
-| `pickup_hour` | datetime | Pickup time floored to the hour; weather join key. |
+| `pickup_hour_ts` | datetime | Pickup time floored to the hour; weather join key. Not a feature. |
 | `temp_c` | float | Open-Meteo temperature (°C) at that hour. |
 | `precip_mm` | float | Open-Meteo precipitation (mm) accumulated in the hour ending at `pickup_hour`. |
 | `is_rain` | int | 1 if `precip_mm >= 0.1`. |
+| `pickup_hour` | int | Hour of pickup, 0 to 23 (Table 1 no. 1). |
+| `pickup_dow` | int | Day of week, 0 = Monday to 6 = Sunday (no. 2). |
+| `is_weekend` | int | Pickup on Saturday or Sunday (no. 14). |
+| `is_late_night` | int | Pickup 00:00 to 05:59 (no. 15, H1 group). |
+| `avg_speed_mph` | float | 60 x `trip_distance` / `duration_min` (no. 16). Values > 80 mph are suspicious; cap or drop using train only. |
+| `is_airport` | int | Pickup or drop-off at JFK (132) or LaGuardia (138) (no. 17, H3 group). |
+| `is_newark` | int | Pickup or drop-off at Newark (1); excluded from H3. |
+| `same_borough` | int | `PU_Borough == DO_Borough` (no. 18). |
+| `has_cbd_fee` | int | `cbd_congestion_fee > 0` (no. 19). |
+| `is_short_trip` | int | 0 < `trip_distance` <= 2 miles (H4 group). |
 | `tip_pct` | float | `tip_amount / fare_amount`, 0 < x <= 1. Not a feature. |
 | `high_tip` | int | 1 if `tip_pct >= 0.25`. Main target. |
 | `high_tip_20`, `high_tip_30` | int | Same at 20% and 30%. Sensitivity checks only. |
