@@ -2,6 +2,8 @@
 
 One row per sampled credit-card yellow taxi trip after cleaning. Produced by `notebooks/01_data_pipeline.ipynb`.
 
+中文版：[data_dictionary_zh.md](data_dictionary_zh.md)
+
 ## Do not use as model features
 
 | Column | Why |
@@ -41,7 +43,7 @@ One row per sampled credit-card yellow taxi trip after cleaning. Produced by `no
 | `PU_service_zone`, `DO_service_zone` | str | Yellow Zone, Boro Zone, Airports, or EWR. |
 | `pickup_hour_ts` | datetime | Pickup time floored to the hour; weather join key. Not a feature. |
 | `temp_c` | float | Open-Meteo temperature (°C) at that hour. |
-| `precip_mm` | float | Open-Meteo precipitation (mm) accumulated in the hour ending at `pickup_hour`. |
+| `precip_mm` | float | Open-Meteo precipitation (mm) accumulated in the hour ending at `pickup_hour_ts`. |
 | `is_rain` | int | 1 if `precip_mm >= 0.1`. |
 | `pickup_hour` | int | Hour of pickup, 0 to 23 (Table 1 no. 1). |
 | `pickup_dow` | int | Day of week, 0 = Monday to 6 = Sunday (no. 2). |
