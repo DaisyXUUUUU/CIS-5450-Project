@@ -2,6 +2,8 @@
 
 English version: [data_dictionary.md](data_dictionary.md)
 
+> v2（54 列，含账单分母和高峰 / 夜间标记）的详细说明见 [data_dictionary_v2_zh.md](data_dictionary_v2_zh.md)。
+
 每一行是一条清洗后的刷卡黄色出租车行程，由 `notebooks/01_data_pipeline.ipynb` 生成。共 796,989 行、48 列，覆盖 2026 年 4 月到 6 月。
 写代码时请读 Parquet 文件；CSV 只用来打开查看，因为它会丢掉日期和整数类型。
 
