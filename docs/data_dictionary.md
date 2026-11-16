@@ -71,3 +71,6 @@ Built by `notebooks/01b_add_features_v2.ipynb` from v1 with the same 796,989 row
 | `is_night` | int | Pickup 20:00 to 05:59. TLC $1 overnight surcharge window. |
 | `tip_pct_bill` | float | `tip_amount / (total_amount - tip_amount)`. Not a feature. |
 | `high_tip_bill` | int | 1 if `tip_amount > round(0.20 * bill, 2) + 0.015`, i.e. more than one cent above 20% of the bill, so preset 20% tips count as 0. Alternative target; not a feature. |
+| `high_tip_bill_25`, `high_tip_bill_30` | int | Same rule at 25% and 30% of the bill. Sensitivity checks only; not features. |
+
+Fare-denominator items in v1 (unchanged in v2): `tip_pct`, `high_tip`, `high_tip_20`, `high_tip_30`, and cleaning rule 8 (`tip / fare <= 100%`, 1,205 rows removed). Because the bill is at least the fare, every kept row already has `tip_pct_bill <= 1`.
