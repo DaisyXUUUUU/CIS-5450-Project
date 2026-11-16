@@ -60,3 +60,14 @@ One row per sampled credit-card yellow taxi trip after cleaning. Produced by `no
 | `high_tip_20`, `high_tip_30` | int | Same at 20% and 30%. Sensitivity checks only. |
 | `pickup_date` | datetime | Pickup date; cluster unit for clustered SEs and the day-block bootstrap. |
 | `split` | str | `train` (Apr 1 to May 15), `val` (May 16 to 31), `test` (June). |
+
+## Added in `trips_clean_v2.parquet`
+
+Built by `notebooks/01b_add_features_v2.ipynb` from v1 with the same 796,989 rows; all 48 v1 columns are identical.
+
+| Column | Type | Meaning |
+| --- | --- | --- |
+| `is_rush_hour` | int | Pickup Monday to Friday, 16:00 to 19:59, not a federal holiday (Memorial Day 2026-05-25, Juneteenth 2026-06-19). TLC $2.50 rush surcharge window. |
+| `is_night` | int | Pickup 20:00 to 05:59. TLC $1 overnight surcharge window. |
+| `tip_pct_bill` | float | `tip_amount / (total_amount - tip_amount)`. Not a feature. |
+| `high_tip_bill` | int | 1 if `tip_amount > round(0.20 * bill, 2) + 0.015`, i.e. more than one cent above 20% of the bill, so preset 20% tips count as 0. Alternative target; not a feature. |
