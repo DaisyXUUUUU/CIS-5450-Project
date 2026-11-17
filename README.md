@@ -10,6 +10,7 @@ CIS 5450 final project (Fall 2026). Group: Ziyue Xu, Yuzhi Zheng, Lin Ge, Yiwen 
 | --- | --- | --- | --- |
 | `notebooks/01_data_pipeline.ipynb` | Ziyue Xu | Download, DuckDB sampling, cleaning, zone + weather joins, target and split, export | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01_data_pipeline.ipynb) |
 | `notebooks/01_data_part_presentation.ipynb` | Ziyue Xu | Walk-through of the data part (decisions + checks); reads the fixed table, writes nothing | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01_data_part_presentation.ipynb) |
+| `notebooks/01c_reproducibility_fresh_download.ipynb` | Ziyue Xu | Reproducibility test: fresh download from the TLC links → same 796,989 rows? (Colab disk only, Drive read only) | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01c_reproducibility_fresh_download.ipynb) |
 | EDA and feature engineering | Yuzhi Zheng | | |
 | Hypothesis tests and bootstrap | Lin Ge | | |
 | Modeling and evaluation | Yiwen Yan | | |
