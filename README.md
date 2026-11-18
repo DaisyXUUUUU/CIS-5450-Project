@@ -9,7 +9,7 @@ CIS 5450 final project (Fall 2026). Group: Ziyue Xu, Yuzhi Zheng, Lin Ge, Yiwen 
 | Notebook | Owner | Contents | Open |
 | --- | --- | --- | --- |
 | `notebooks/01_data_pipeline.ipynb` | Ziyue Xu | Download, DuckDB sampling, cleaning, zone + weather joins, target and split, export | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01_data_pipeline.ipynb) |
-| `notebooks/01_data_part_presentation.ipynb` | Ziyue Xu | Walk-through of the data part: re-acquires the data from the official links, rebuilds the table step by step, and checks it is identical to the fixed v2 (writes nothing to Drive) | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01_data_part_presentation.ipynb) |
+| `notebooks/01_data_part_presentation.ipynb` | Ziyue Xu | Complete data pipeline for presentation: download from the official links, DuckDB sampling, cleaning, joins, features, split (output to the Colab disk) | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01_data_part_presentation.ipynb) |
 | `notebooks/01c_reproducibility_fresh_download.ipynb` | Ziyue Xu | Reproducibility test: fresh download from the TLC links → same 796,989 rows? (Colab disk only, Drive read only) | [Colab](https://colab.research.google.com/github/DaisyXUUUUU/CIS-5450-Project/blob/main/notebooks/01c_reproducibility_fresh_download.ipynb) |
 | EDA and feature engineering | Yuzhi Zheng | | |
 | Hypothesis tests and bootstrap | Lin Ge | | |
